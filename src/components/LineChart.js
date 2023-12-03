@@ -14,7 +14,7 @@ function LineChart({props}) {
   // }, [props]);
 
   useEffect(() => {
-    fetch(`http://54.177.204.156/dataCheck`)
+    fetch('http://52.9.248.230/dataCheck')
       .then(response => response.json())
       .then(data => console.log(data))
       .catch(error => console.error('Error fetching data: ', error));
