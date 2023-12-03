@@ -6,19 +6,13 @@ function LineChart({props}) {
 
   const [data, setData] = useState({});
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:5000/lineChartData/${props}`)
-  //     .then(response => response.json())
-  //     .then(data => setData(data))
-  //     .catch(error => console.error('Error fetching data: ', error));
-  // }, [props]);
-
   useEffect(() => {
-    fetch('http://52.9.248.230/dataCheck')
+    fetch(`http://52.9.248.230/lineChartData/${props}`)
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => setData(data))
       .catch(error => console.error('Error fetching data: ', error));
   }, [props]);
+
 
   const inputs = {
     labels: data['label'],
