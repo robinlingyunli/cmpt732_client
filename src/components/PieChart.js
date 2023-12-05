@@ -6,7 +6,7 @@ function PieChart() {
   const [chartData, setChartData] = useState({});
 
   useEffect(() => {
-    fetch('http://localhost:5000/pieChartData')
+    fetch('http://52.9.248.230/pieChartData')
       .then(response => response.json())
       .then(data => console.log(data))
       .catch(error => console.error('Error fetching data: ', error));
