@@ -146,7 +146,7 @@ return (
         }}
       />
       <TextField
-        label="Current Hour"
+        label="Departure Hour"
         type="text"
         value={hour}
         onChange={(e) => setHour(e.target.value)}
