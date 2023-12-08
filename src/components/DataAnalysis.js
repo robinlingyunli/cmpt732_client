@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './DataAnalysis.css'; 
+import './css/DataAnalysis.css'; 
 import LineChart from './LineChart';
 import BarChart from './BarChart';
 import StateMap from './StateMap';
@@ -11,15 +11,15 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import TimelineIcon from '@mui/icons-material/Timeline';
-import LandscapeIcon from '@mui/icons-material/Landscape'; // 假设这是 Geography 图标
-import WeatherIcon from '@mui/icons-material/WbSunny'; // 假设这是 Weather 图标
+import LandscapeIcon from '@mui/icons-material/Landscape';
+import WeatherIcon from '@mui/icons-material/WbSunny'; 
 
 
 const Sidebar = ({ onItemSelected }) => {
   return (
     <Box
       sx={{
-        width: 240,
+        width: 280,
         bgcolor: '#222D32', 
         color: 'white', 
         '& .MuiListItemIcon-root': {
@@ -130,16 +130,12 @@ const Content = ({ selectedItem, secondaryFilter}) => {
         return <LineChart props="Hour"/>;
       case "Country": 
         return <StateMap />;
-      case "City": 
-        return <></>;
       case "Elevation": 
         return <BarChart props="Elevation"/>;
       case "Temperature": 
         return <BarChart props="Temperature"/>;
       case "DEWP": 
         return <BarChart props="DEWP"/>;
-      case "VISIB": 
-        return ;
       case "WDSP": 
         return <BarChart props="WDSP"/>;  
       case "PRCP": 
@@ -168,8 +164,8 @@ const DataAnalysis = () => {
 
   const allFiltersMap = {
     'time': ['Year', 'Month', 'Week', 'Hour'],
-    'geography': ['Country', 'City'],
-    'weather': ['Elevation', 'Temperature', 'DEWP', 'VISIBILITY', 'WDSP', 'PRCP','SNDP', 'FRSHTT']
+    'geography': ['Country'],
+    'weather': ['Elevation', 'Temperature', 'DEWP', 'WDSP', 'PRCP','SNDP', 'FRSHTT']
   };
 
   useEffect(() => {
